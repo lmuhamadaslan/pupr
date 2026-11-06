@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengumuman Resmi — Dinas PUPR Kabupaten Muna Barat</title>
+<meta name="description" content="Daftar lengkap pengumuman resmi Dinas PUPR Kabupaten Muna Barat: pengadaan dan tender, pengalihan lalu lintas, layanan, dan pemberitahuan.">
+<meta name="theme-color" content="#ecc94b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ecc94b'/%3E%3Cpath d='M7 21h18v3H7zM10 21a6 6 0 0 1 12 0z' fill='%231a202c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --color-pu: #ecc94b; --color-pu-deep: #d4a91c; --color-ink: #1a202c; --color-paper: #f7fafc;
+  }
+</style>
+<style>
+  html { scroll-padding-top: 6rem; }
+  body { overflow-x: clip; }
+  .bl { transition: transform .3s ease-in-out, opacity .3s ease-in-out; transform-origin: center; }
+  .is-open .b1 { transform: translateY(7px) rotate(45deg); } .is-open .b2 { opacity: 0; } .is-open .b3 { transform: translateY(-7px) rotate(-45deg); }
+  .hazard { background: repeating-linear-gradient(135deg, #ecc94b 0 14px, #1a202c 14px 28px); }
+  :focus-visible { outline: 3px solid #1a202c; outline-offset: 2px; }
+  .on-dark :focus-visible { outline-color: #ecc94b; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; } }
+</style>
+</head>
+
+<body class="bg-paper font-sans text-ink antialiased selection:bg-pu selection:text-ink">
+<a href="#konten" class="absolute left-4 top-2 z-[100] -translate-y-20 rounded bg-pu px-4 py-2 font-semibold text-ink focus:translate-y-0">Lewati ke konten utama</a>
+
+<header id="header" class="fixed inset-x-0 top-0 z-50 border-b border-ink/5 bg-white/90 backdrop-blur-md transition-shadow duration-300">
+  <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[72px] lg:px-8" aria-label="Navigasi utama">
+    <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="Dinas PUPR Kabupaten Muna Barat — beranda">
+      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-pu"><i data-lucide="hard-hat" class="h-6 w-6"></i></span>
+      <span class="min-w-0 leading-tight"><span class="block truncate text-sm font-extrabold tracking-tight sm:text-base">Dinas PUPR</span><span class="block truncate text-[11px] font-medium text-ink/70 sm:text-xs">Kabupaten Muna Barat</span></span>
+    </a>
+    <ul class="hidden items-center gap-1 text-sm font-semibold lg:flex">
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="index.html#beranda">Beranda</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="dokumen-perencanaan.html">Dokumen Perencanaan</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="index.html#aduan">Aduan Masyarakat</a></li>
+      <li><a class="rounded-md bg-pu px-3 py-2" href="pengumuman.html" aria-current="page">Pengumuman</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="berita.html">Berita</a></li>
+    </ul>
+    <a href="index.html#aduan" class="hidden rounded-lg bg-pu px-5 py-2.5 text-sm font-bold transition hover:bg-pu-deep lg:inline-block">Lapor Sekarang</a>
+    <button id="menu-btn" type="button" class="relative flex h-11 w-11 items-center justify-center rounded-lg lg:hidden" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-panel">
+      <span class="relative block h-[16px] w-6"><span class="bl b1 absolute left-0 top-0 h-0.5 w-full rounded bg-ink"></span><span class="bl b2 absolute left-0 top-[7px] h-0.5 w-full rounded bg-ink"></span><span class="bl b3 absolute left-0 top-[14px] h-0.5 w-full rounded bg-ink"></span></span>
+    </button>
+  </nav>
+</header>
+
+<div id="overlay" class="invisible fixed inset-0 z-40 bg-ink/60 opacity-0 transition-all duration-300 ease-in-out lg:hidden" aria-hidden="true"></div>
+<aside id="mobile-panel" class="invisible fixed inset-y-0 right-0 z-[45] flex w-[min(20rem,88vw)] translate-x-full flex-col overflow-y-auto bg-ink px-5 pb-8 pt-24 text-white shadow-2xl transition-all duration-300 ease-in-out lg:hidden" aria-label="Menu navigasi" inert>
+  <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-pu">Akses Cepat</p>
+  <ul class="space-y-2">
+    <li><a href="dokumen-perencanaan.html" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="file-text" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Dokumen Perencanaan</span><span class="block text-xs text-white/60">Renstra, Renja, LKjIP</span></span></a></li>
+    <li><a href="index.html#aduan" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="message-square-warning" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Form Pengaduan Warga</span><span class="block text-xs text-white/60">Laporkan kerusakan infrastruktur</span></span></a></li>
+    <li><a href="pengumuman.html" aria-current="page" class="mlink flex items-center gap-4 rounded-xl bg-pu p-4 text-ink"><i data-lucide="megaphone" class="h-6 w-6 shrink-0"></i><span><span class="block font-semibold">Pengumuman Dinas</span><span class="block text-xs">Tender dan pengalihan jalan</span></span></a></li>
+    <li><a href="berita.html" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="newspaper" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Berita Terbaru</span><span class="block text-xs text-white/60">Dokumentasi pengerjaan proyek</span></span></a></li>
+  </ul>
+  <a href="index.html" class="mlink mt-6 rounded-lg border-2 border-white/30 px-5 py-3.5 text-center font-semibold transition hover:border-pu hover:text-pu">Kembali ke Beranda</a>
+  <p class="mt-auto pt-8 text-xs leading-relaxed text-white/50">Dinas Pekerjaan Umum dan Penataan Ruang<br>Kabupaten Muna Barat, Sulawesi Tenggara</p>
+</aside>
+
+<main id="konten">
+  <section class="on-dark bg-ink text-white">
+    <div class="mx-auto max-w-5xl px-4 pb-14 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+      <nav aria-label="Breadcrumb"><ol class="flex items-center gap-2 text-sm text-white/70"><li><a href="index.html" class="transition hover:text-pu">Beranda</a></li><li aria-hidden="true"><i data-lucide="chevron-right" class="h-4 w-4"></i></li><li aria-current="page" class="font-semibold text-pu">Pengumuman</li></ol></nav>
+      <h1 class="mt-5 text-3xl font-extrabold tracking-tight sm:text-5xl">Pengumuman <span class="text-pu">Resmi</span></h1>
+      <p class="mt-4 max-w-2xl leading-relaxed text-white/80">Informasi resmi Dinas PUPR Kabupaten Muna Barat mengenai pengadaan, pengalihan lalu lintas, layanan publik, dan pemberitahuan lainnya.</p>
+    </div>
+    <div class="hazard h-2"></div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div id="tabs" class="flex flex-wrap gap-2" role="group" aria-label="Filter kategori pengumuman"></div>
+
+    <div class="top-[72px] z-30 mt-5 rounded-2xl border border-ink/10 bg-white/95 p-3 shadow-sm backdrop-blur-md lg:sticky">
+      <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
+        <div class="relative"><label for="q" class="sr-only">Cari pengumuman</label><i data-lucide="search" class="pointer-events-none absolute left-3.5 top-1/2 h-5 w-5 -translate-y-1/2 text-ink/50"></i>
+          <input id="q" type="search" maxlength="80" autocomplete="off" placeholder="Cari judul atau isi pengumuman…" class="w-full rounded-lg border border-ink/20 bg-white py-3 pl-11 pr-4 outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60"></div>
+        <div><label for="tahun" class="sr-only">Tahun</label><select id="tahun" class="w-full rounded-lg border border-ink/20 bg-white px-4 py-3 outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60"></select></div>
+        <div><label for="urut" class="sr-only">Urutkan</label><select id="urut" class="w-full rounded-lg border border-ink/20 bg-white px-4 py-3 outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60"><option value="baru">Terbaru</option><option value="lama">Terlama</option></select></div>
+      </div>
+      <label class="mt-3 flex w-fit cursor-pointer items-center gap-2.5 px-1 text-sm font-medium"><input id="penting" type="checkbox" class="h-5 w-5 accent-[#1a202c]">Hanya tampilkan yang penting</label>
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+      <p id="hasil" class="text-sm font-medium text-ink/70" role="status" aria-live="polite"></p>
+      <button id="reset" type="button" class="hidden items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold underline decoration-pu decoration-4 underline-offset-4 transition hover:bg-pu/30"><i data-lucide="rotate-ccw" class="h-4 w-4"></i>Reset filter</button>
+    </div>
+
+    <ul id="list" class="mt-4 space-y-4"></ul>
+    <noscript><p class="rounded-xl border border-ink/10 bg-white p-6">Aktifkan JavaScript untuk menampilkan daftar pengumuman.</p></noscript>
+
+    <div id="empty" class="mt-4 hidden rounded-2xl border-2 border-dashed border-ink/20 bg-white p-10 text-center">
+      <i data-lucide="megaphone-off" class="mx-auto h-12 w-12 text-ink/40"></i>
+      <h2 class="mt-4 text-xl font-bold">Pengumuman tidak ditemukan</h2>
+      <p class="mx-auto mt-1 max-w-sm text-sm text-ink/70">Coba kata kunci lain atau hapus sebagian filter yang aktif.</p>
+      <button id="empty-reset" type="button" class="mt-5 rounded-lg bg-pu px-6 py-3 font-bold transition hover:bg-pu-deep">Tampilkan semua pengumuman</button>
+    </div>
+
+    <div class="mt-8 text-center"><button id="more" type="button" class="hidden items-center gap-2 rounded-lg border-2 border-ink px-7 py-3.5 font-bold transition hover:bg-ink hover:text-white"><i data-lucide="chevrons-down" class="h-5 w-5"></i>Muat lebih banyak</button></div>
+  </section>
+</main>
+
+<footer class="on-dark bg-ink text-white">
+  <div class="hazard h-2"></div>
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+    <div><div class="flex items-center gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-lg bg-pu text-ink"><i data-lucide="hard-hat" class="h-6 w-6"></i></span><p class="font-extrabold">Dinas PUPR Kabupaten Muna Barat</p></div><p class="mt-4 max-w-sm text-sm leading-relaxed text-white/70">Dinas Pekerjaan Umum dan Penataan Ruang. Raha, Kabupaten Muna Barat, Sulawesi Tenggara.</p></div>
+    <nav aria-label="Tautan footer"><p class="text-sm font-semibold uppercase tracking-wider text-pu">Layanan</p><ul class="mt-4 space-y-2.5 text-sm text-white/80"><li><a class="transition hover:text-pu" href="dokumen-perencanaan.html">Dokumen Perencanaan</a></li><li><a class="transition hover:text-pu" href="index.html#aduan">Aduan Masyarakat</a></li><li><a class="transition hover:text-pu" href="lacak-aduan.html">Lacak Aduan</a></li><li><a class="transition hover:text-pu" href="pengumuman.html">Pengumuman Resmi</a></li><li><a class="transition hover:text-pu" href="berita.html">Berita Terbaru</a></li></ul></nav>
+    <div><p class="text-sm font-semibold uppercase tracking-wider text-pu">Jam Layanan</p><ul class="mt-4 space-y-2.5 text-sm text-white/80"><li>Senin – Kamis: 08.00 – 16.00 WITA</li><li>Jumat: 08.00 – 11.30 WITA</li></ul></div>
+  </div>
+  <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-white/60">© 2026 Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Muna Barat. Hak cipta dilindungi.</div>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const icons = () => window.lucide && lucide.createIcons();
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ================= DATA PENGUMUMAN =================
+   Ganti dengan pengumuman resmi. kat: Tender | Lalu Lintas | Layanan | Pemberitahuan
+   tanggal: YYYY-MM-DD · penting: true/false · lampiran (opsional): { file, ukuran } */
+const PENGUMUMAN = [
+  { id: 'pengadaan-paket-2026', kat: 'Tender', judul: 'Pengumuman Pengadaan Paket Pekerjaan Tahun Anggaran 2026', ringkas: 'Informasi paket, persyaratan peserta, dan jadwal pengadaan barang/jasa pemerintah.', isi: ['Dinas PUPR Kabupaten Muna Barat mengumumkan pelaksanaan pengadaan paket pekerjaan konstruksi dan jasa konsultansi Tahun Anggaran 2026.', 'Penyedia yang berminat diharapkan memeriksa persyaratan kualifikasi, jadwal, dan dokumen pemilihan yang tercantum pada lampiran. Seluruh tahapan mengikuti ketentuan pengadaan barang/jasa pemerintah yang berlaku.'], tanggal: '2026-10-28', penting: false, lampiran: { file: 'assets/pengumuman/pengadaan-paket-2026.pdf', ukuran: '1,1 MB' } },
+  { id: 'pengalihan-arus-pengaspalan', kat: 'Lalu Lintas', judul: 'Pengalihan Arus Selama Pekerjaan Pengaspalan Ruas Jalan Kabupaten', ringkas: 'Pengendara diimbau memilih jalur alternatif dan berhati-hati di sekitar area kerja.', isi: ['Selama pekerjaan pengaspalan berlangsung, sebagian ruas jalan ditutup sementara dan arus lalu lintas dialihkan melalui jalur alternatif.', 'Pengguna jalan diminta mematuhi rambu, mengurangi kecepatan, dan mengikuti arahan petugas di lapangan. Kami memohon maaf atas ketidaknyamanan selama pekerjaan.'], tanggal: '2026-10-22', penting: true },
+  { id: 'layanan-konsultasi-tata-ruang', kat: 'Layanan', judul: 'Jadwal Layanan Konsultasi Tata Ruang dan Perizinan Bangunan', ringkas: 'Konsultasi dilayani pada hari kerja. Siapkan dokumen pendukung sebelum datang.', isi: ['Layanan konsultasi tata ruang dan perizinan bangunan dilaksanakan pada hari kerja sesuai jam layanan dinas.', 'Pemohon diharapkan membawa identitas, bukti kepemilikan lahan, dan sketsa rencana bangunan agar konsultasi berjalan efektif.'], tanggal: '2026-10-15', penting: false },
+  { id: 'pemeliharaan-drainase', kat: 'Pemberitahuan', judul: 'Pemeliharaan Rutin Drainase Jelang Musim Hujan', ringkas: 'Pembersihan saluran dilakukan untuk mengurangi risiko genangan di permukiman dan ruas jalan.', isi: ['Dinas PUPR melaksanakan pembersihan dan pemeliharaan rutin saluran drainase di sejumlah kawasan.', 'Masyarakat diimbau tidak membuang sampah ke saluran dan melaporkan saluran tersumbat melalui formulir aduan masyarakat.'], tanggal: '2026-10-05', penting: false },
+  { id: 'hasil-evaluasi-penawaran-jalan', kat: 'Tender', judul: 'Pengumuman Hasil Evaluasi Penawaran Paket Pekerjaan Jalan', ringkas: 'Hasil evaluasi administrasi, teknis, dan harga untuk paket pekerjaan jalan kabupaten.', isi: ['Panitia pengadaan telah menyelesaikan evaluasi penawaran. Hasil evaluasi dapat dilihat pada dokumen terlampir.', 'Sanggahan dapat diajukan dalam masa sanggah sesuai ketentuan yang tercantum pada dokumen.'], tanggal: '2026-09-24', penting: false, lampiran: { file: 'assets/pengumuman/hasil-evaluasi-jalan.pdf', ukuran: '860 KB' } },
+  { id: 'pembatasan-kendaraan-berat', kat: 'Lalu Lintas', judul: 'Pembatasan Kendaraan Berat pada Jembatan Selama Perbaikan', ringkas: 'Kendaraan dengan tonase tertentu dilarang melintas selama pekerjaan perbaikan jembatan.', isi: ['Untuk menjaga keselamatan, kendaraan berat dibatasi melintas selama pekerjaan perbaikan struktur jembatan.', 'Pengemudi kendaraan angkutan barang diminta menggunakan jalur alternatif yang telah ditentukan.'], tanggal: '2026-09-10', penting: true },
+  { id: 'penyesuaian-jam-layanan', kat: 'Layanan', judul: 'Penyesuaian Jam Layanan pada Hari Libur Nasional', ringkas: 'Layanan tatap muka ditiadakan pada hari libur nasional dan cuti bersama.', isi: ['Layanan tatap muka tidak tersedia pada hari libur nasional dan cuti bersama.', 'Pengaduan tetap dapat disampaikan melalui formulir daring dan akan ditindaklanjuti pada hari kerja berikutnya.'], tanggal: '2026-08-27', penting: false },
+  { id: 'pelelangan-ulang', kat: 'Tender', judul: 'Pengumuman Pelelangan Ulang Paket Pekerjaan Irigasi', ringkas: 'Pelelangan ulang dilaksanakan karena belum terpenuhinya jumlah peserta yang disyaratkan.', isi: ['Paket pekerjaan irigasi dilelang ulang. Jadwal dan persyaratan terbaru tercantum pada dokumen terlampir.'], tanggal: '2026-08-12', penting: false, lampiran: { file: 'assets/pengumuman/pelelangan-ulang-irigasi.pdf', ukuran: '740 KB' } },
+  { id: 'pendataan-jalan-desa', kat: 'Pemberitahuan', judul: 'Pendataan Kondisi Jalan Desa Tahun 2026', ringkas: 'Tim dinas melakukan survei kondisi jalan desa sebagai dasar penyusunan program pemeliharaan.', isi: ['Tim survei akan mendatangi desa-desa untuk mendata kondisi jalan. Pemerintah desa diharapkan membantu menyediakan informasi dan pendamping lapangan.'], tanggal: '2026-07-20', penting: false },
+  { id: 'persyaratan-pbg', kat: 'Layanan', judul: 'Pembaruan Persyaratan Permohonan Persetujuan Bangunan Gedung (PBG)', ringkas: 'Daftar persyaratan dokumen permohonan PBG telah diperbarui.', isi: ['Persyaratan dokumen permohonan Persetujuan Bangunan Gedung diperbarui. Pemohon diminta memeriksa daftar terbaru sebelum mengajukan berkas.'], tanggal: '2026-06-16', penting: false },
+  { id: 'rup-2026', kat: 'Tender', judul: 'Pengumuman Rencana Umum Pengadaan Tahun Anggaran 2026', ringkas: 'Daftar rencana paket pengadaan yang akan dilaksanakan sepanjang Tahun Anggaran 2026.', isi: ['Rencana Umum Pengadaan Tahun Anggaran 2026 diumumkan sebagai bentuk keterbukaan informasi kepada penyedia dan masyarakat.'], tanggal: '2026-04-08', penting: false, lampiran: { file: 'assets/pengumuman/rup-2026.pdf', ukuran: '1,6 MB' } },
+  { id: 'penutupan-layanan-akhir-tahun', kat: 'Pemberitahuan', judul: 'Penutupan Layanan Akhir Tahun Anggaran 2025', ringkas: 'Penyesuaian layanan administrasi menjelang penutupan tahun anggaran.', isi: ['Menjelang penutupan tahun anggaran, sebagian layanan administrasi disesuaikan. Mohon mengajukan keperluan lebih awal.'], tanggal: '2025-12-19', penting: false },
+  { id: 'pengalihan-arus-jembatan-2025', kat: 'Lalu Lintas', judul: 'Pengalihan Arus Selama Pekerjaan Jembatan', ringkas: 'Pengalihan arus lalu lintas sementara selama pekerjaan penggantian jembatan.', isi: ['Arus lalu lintas dialihkan sementara selama pekerjaan penggantian jembatan. Gunakan jalur alternatif yang ditandai rambu.'], tanggal: '2025-10-14', penting: false }
+];
+const KAT = { 'Tender': 'file-signature', 'Lalu Lintas': 'traffic-cone', 'Layanan': 'headset', 'Pemberitahuan': 'bell' };
+const PAGE = 6, BULAN = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+const tglPanjang = iso => new Date(iso + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+const isBaru = iso => (Date.now() - new Date(iso + 'T00:00:00')) / 864e5 <= 14 && Date.now() >= new Date(iso + 'T00:00:00');
+
+const params = new URLSearchParams(location.search);
+const state = { kat: KAT[params.get('kategori')] ? params.get('kategori') : '', tahun: params.get('tahun') || '', q: (params.get('q') || '').slice(0, 80), urut: params.get('urut') === 'lama' ? 'lama' : 'baru', penting: params.get('penting') === '1', shown: PAGE };
+const years = [...new Set(PENGUMUMAN.map(d => +d.tanggal.slice(0, 4)))].sort((a, b) => b - a);
+$('#tahun').innerHTML = '<option value="">Semua tahun</option>' + years.map(y => `<option value="${y}">${y}</option>`).join('');
+if (!years.includes(+state.tahun)) state.tahun = '';
+$('#q').value = state.q; $('#tahun').value = state.tahun; $('#urut').value = state.urut; $('#penting').checked = state.penting;
+
+function renderTabs() {
+  const defs = [['', 'Semua', PENGUMUMAN.length], ...Object.keys(KAT).map(k => [k, k, PENGUMUMAN.filter(d => d.kat === k).length])];
+  $('#tabs').innerHTML = defs.map(([v, l, n]) => { const on = state.kat === v;
+    return `<button type="button" data-kat="${v}" aria-pressed="${on}" class="flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-sm font-bold transition ${on ? 'border-ink bg-ink text-white' : 'border-ink/15 bg-white hover:border-ink'}">${l}<span class="rounded-full px-2 py-0.5 text-xs ${on ? 'bg-pu text-ink' : 'bg-ink/10'}">${n}</span></button>`; }).join('');
+}
+function filtered() {
+  const q = state.q.trim().toLowerCase();
+  const r = PENGUMUMAN.filter(d => (!state.kat || d.kat === state.kat) && (!state.tahun || d.tanggal.startsWith(state.tahun)) && (!state.penting || d.penting) && (!q || (d.judul + ' ' + d.ringkas + ' ' + d.isi.join(' ') + ' ' + d.kat).toLowerCase().includes(q)));
+  return r.sort((a, b) => state.urut === 'baru' ? b.tanggal.localeCompare(a.tanggal) : a.tanggal.localeCompare(b.tanggal));
+}
+function row(d) {
+  const dt = new Date(d.tanggal + 'T00:00:00');
+  return `<li id="p-${esc(d.id)}" class="doc-row overflow-hidden rounded-2xl border ${d.penting ? 'border-pu bg-pu/25' : 'border-ink/10 bg-white'} transition hover:shadow-lg">
+    <div class="flex gap-4 p-4 sm:gap-6 sm:p-6">
+      <time datetime="${d.tanggal}" class="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-xl bg-ink text-pu sm:h-20 sm:w-20"><span class="text-2xl font-extrabold leading-none sm:text-3xl">${dt.getDate()}</span><span class="mt-1 text-[11px] font-semibold uppercase tracking-wider sm:text-xs">${BULAN[dt.getMonth()]} ${dt.getFullYear()}</span></time>
+      <div class="min-w-0 flex-1">
+        <div class="flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1 rounded bg-pu px-2 py-0.5 text-[11px] font-bold uppercase ${d.penting ? 'ring-1 ring-ink/30' : ''}"><i data-lucide="${KAT[d.kat]}" class="h-3 w-3"></i>${esc(d.kat)}</span>${d.penting ? '<span class="inline-flex items-center gap-1 rounded bg-ink px-2 py-0.5 text-[11px] font-bold uppercase text-pu"><i data-lucide="triangle-alert" class="h-3 w-3"></i>Penting</span>' : ''}${isBaru(d.tanggal) ? '<span class="rounded bg-emerald-700 px-2 py-0.5 text-[11px] font-bold uppercase text-white">Baru</span>' : ''}</div>
+        <h2 class="mt-1.5 font-bold leading-snug sm:text-lg">${esc(d.judul)}</h2>
+        <p class="mt-1 text-sm leading-relaxed text-ink/75">${esc(d.ringkas)}</p>
+        <button type="button" class="toggle mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline decoration-pu decoration-4 underline-offset-4" aria-expanded="false" aria-controls="det-${esc(d.id)}"><span class="lbl">Baca selengkapnya</span><i data-lucide="chevron-down" class="chev h-4 w-4 transition-transform duration-300"></i></button>
+      </div>
+    </div>
+    <div id="det-${esc(d.id)}" class="detail grid grid-rows-[0fr] transition-all duration-300 ease-in-out" inert>
+      <div class="overflow-hidden"><div class="border-t border-ink/10 px-4 pb-6 pt-5 sm:px-6 sm:pl-[7.5rem]">
+        <p class="mb-3 text-xs font-semibold text-ink/60">Diterbitkan ${tglPanjang(d.tanggal)}</p>
+        <div class="space-y-3 text-sm leading-relaxed">${d.isi.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+        ${d.lampiran ? `<a href="${esc(d.lampiran.file)}" download class="mt-5 inline-flex items-center gap-2 rounded-lg bg-pu px-5 py-3 text-sm font-bold transition hover:bg-pu-deep"><i data-lucide="download" class="h-4 w-4"></i>Unduh Lampiran (PDF, ${esc(d.lampiran.ukuran)})</a>` : ''}
+      </div></div>
+    </div></li>`;
+}
+function render(animate) {
+  const all = filtered(), vis = all.slice(0, state.shown);
+  renderTabs();
+  $('#list').innerHTML = vis.map(row).join('');
+  $('#empty').classList.toggle('hidden', all.length > 0);
+  $('#more').classList.toggle('hidden', vis.length >= all.length); $('#more').classList.toggle('inline-flex', vis.length < all.length);
+  const active = state.kat || state.tahun || state.q.trim() || state.penting;
+  $('#reset').classList.toggle('hidden', !active); $('#reset').classList.toggle('inline-flex', !!active);
+  $('#hasil').textContent = all.length ? `Menampilkan ${vis.length} dari ${all.length} pengumuman` : 'Tidak ada pengumuman yang cocok';
+  icons();
+  if (animate && window.gsap && !reduce) gsap.from(animate === 'more' ? [...$$('.doc-row')].slice(-Math.min(PAGE, vis.length)) : '.doc-row', { y: 18, opacity: 0, duration: .5, stagger: .06, ease: 'power2.out', clearProps: 'all' });
+  const p = new URLSearchParams();
+  if (state.kat) p.set('kategori', state.kat); if (state.tahun) p.set('tahun', state.tahun); if (state.q.trim()) p.set('q', state.q.trim()); if (state.urut !== 'baru') p.set('urut', 'lama'); if (state.penting) p.set('penting', '1');
+  history.replaceState(null, '', (p.toString() ? '?' + p : location.pathname) + location.hash);
+}
+const update = () => { state.shown = PAGE; render(true); };
+
+/* Buka / tutup detail (animasi 300ms) */
+function setDetail(li, v) {
+  const b = li.querySelector('.toggle'), d = li.querySelector('.detail');
+  b.setAttribute('aria-expanded', v); b.querySelector('.lbl').textContent = v ? 'Tutup' : 'Baca selengkapnya';
+  b.querySelector('.chev').classList.toggle('rotate-180', v);
+  d.classList.toggle('grid-rows-[1fr]', v); d.classList.toggle('grid-rows-[0fr]', !v); d.inert = !v;
+}
+$('#list').addEventListener('click', e => { const b = e.target.closest('.toggle'); if (b) setDetail(b.closest('li'), b.getAttribute('aria-expanded') !== 'true'); });
+
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('[data-kat]'); if (b) { state.kat = b.dataset.kat; update(); } });
+$('#tahun').addEventListener('change', e => { state.tahun = e.target.value; update(); });
+$('#urut').addEventListener('change', e => { state.urut = e.target.value; update(); });
+$('#penting').addEventListener('change', e => { state.penting = e.target.checked; update(); });
+let t; $('#q').addEventListener('input', e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; update(); }, 200); });
+$('#more').addEventListener('click', () => { state.shown += PAGE; render('more'); });
+const reset = () => { Object.assign(state, { kat: '', tahun: '', q: '', urut: 'baru', penting: false }); $('#q').value = ''; $('#tahun').value = ''; $('#urut').value = 'baru'; $('#penting').checked = false; update(); };
+$('#reset').addEventListener('click', reset); $('#empty-reset').addEventListener('click', reset);
+
+/* ---------- Navbar mobile (slide-in 300ms) ---------- */
+const btn = $('#menu-btn'), panel = $('#mobile-panel'), overlay = $('#overlay'), html = document.documentElement;
+let open = false;
+function setMenu(v) {
+  const was = open; open = v;
+  btn.classList.toggle('is-open', v); btn.setAttribute('aria-expanded', v); btn.setAttribute('aria-label', v ? 'Tutup menu' : 'Buka menu');
+  panel.classList.toggle('translate-x-0', v); panel.classList.toggle('translate-x-full', !v); panel.classList.toggle('invisible', !v);
+  overlay.classList.toggle('opacity-100', v); overlay.classList.toggle('opacity-0', !v); overlay.classList.toggle('invisible', !v);
+  panel.inert = !v; html.classList.toggle('overflow-hidden', v);
+  if (v) setTimeout(() => panel.querySelector('a').focus({ preventScroll: true }), 320); else if (was) btn.focus({ preventScroll: true });
+}
+btn.addEventListener('click', () => setMenu(!open));
+overlay.addEventListener('click', () => setMenu(false));
+$$('.mlink').forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape' && open) setMenu(false); });
+addEventListener('resize', () => { if (innerWidth >= 1024 && open) setMenu(false); });
+const header = $('#header'), onScroll = () => header.classList.toggle('shadow-md', scrollY > 10);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+icons();
+render(false);
+/* Tautan langsung ke satu pengumuman: pengumuman.html#p-<id> */
+if (location.hash.startsWith('#p-')) {
+  const hid = decodeURIComponent(location.hash.slice(1));
+  if (!document.getElementById(hid)) { state.shown = PENGUMUMAN.length; render(false); }
+  const li = document.getElementById(hid);
+  if (li) { setDetail(li, true); setTimeout(() => li.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }), 100); }
+}
+</script>
+</body>
+</html>

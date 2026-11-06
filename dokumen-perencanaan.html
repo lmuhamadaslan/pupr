@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokumen Perencanaan — Dinas PUPR Kabupaten Muna Barat</title>
+<meta name="description" content="Daftar dokumen perencanaan Dinas PUPR Kabupaten Muna Barat: Renstra, Renja, dan LKjIP. Cari, saring, dan unduh dalam format PDF.">
+<meta name="theme-color" content="#ecc94b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ecc94b'/%3E%3Cpath d='M7 21h18v3H7zM10 21a6 6 0 0 1 12 0z' fill='%231a202c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --color-pu: #ecc94b; --color-pu-deep: #d4a91c; --color-ink: #1a202c; --color-paper: #f7fafc;
+  }
+</style>
+<style>
+  html { scroll-padding-top: 5rem; }
+  body { overflow-x: clip; }
+  .bl { transition: transform .3s ease-in-out, opacity .3s ease-in-out; transform-origin: center; }
+  .is-open .b1 { transform: translateY(7px) rotate(45deg); } .is-open .b2 { opacity: 0; } .is-open .b3 { transform: translateY(-7px) rotate(-45deg); }
+  .hazard { background: repeating-linear-gradient(135deg, #ecc94b 0 14px, #1a202c 14px 28px); }
+  :focus-visible { outline: 3px solid #1a202c; outline-offset: 2px; }
+  .on-dark :focus-visible { outline-color: #ecc94b; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; } }
+</style>
+</head>
+
+<body class="bg-paper font-sans text-ink antialiased selection:bg-pu selection:text-ink">
+<a href="#konten" class="absolute left-4 top-2 z-[100] -translate-y-20 rounded bg-pu px-4 py-2 font-semibold text-ink focus:translate-y-0">Lewati ke konten utama</a>
+
+<header id="header" class="fixed inset-x-0 top-0 z-50 border-b border-ink/5 bg-white/90 backdrop-blur-md transition-shadow duration-300">
+  <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[72px] lg:px-8" aria-label="Navigasi utama">
+    <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="Dinas PUPR Kabupaten Muna Barat — beranda">
+      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-pu"><i data-lucide="hard-hat" class="h-6 w-6"></i></span>
+      <span class="min-w-0 leading-tight"><span class="block truncate text-sm font-extrabold tracking-tight sm:text-base">Dinas PUPR</span><span class="block truncate text-[11px] font-medium text-ink/70 sm:text-xs">Kabupaten Muna Barat</span></span>
+    </a>
+    <ul class="hidden items-center gap-1 text-sm font-semibold lg:flex">
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="index.html#beranda">Beranda</a></li>
+      <li><a class="rounded-md bg-pu px-3 py-2" href="dokumen-perencanaan.html" aria-current="page">Dokumen Perencanaan</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="index.html#aduan">Aduan Masyarakat</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="pengumuman.html">Pengumuman</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="berita.html">Berita</a></li>
+    </ul>
+    <a href="index.html#aduan" class="hidden rounded-lg bg-pu px-5 py-2.5 text-sm font-bold transition hover:bg-pu-deep lg:inline-block">Lapor Sekarang</a>
+    <button id="menu-btn" type="button" class="relative flex h-11 w-11 items-center justify-center rounded-lg lg:hidden" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-panel">
+      <span class="relative block h-[16px] w-6"><span class="bl b1 absolute left-0 top-0 h-0.5 w-full rounded bg-ink"></span><span class="bl b2 absolute left-0 top-[7px] h-0.5 w-full rounded bg-ink"></span><span class="bl b3 absolute left-0 top-[14px] h-0.5 w-full rounded bg-ink"></span></span>
+    </button>
+  </nav>
+</header>
+
+<div id="overlay" class="invisible fixed inset-0 z-40 bg-ink/60 opacity-0 transition-all duration-300 ease-in-out lg:hidden" aria-hidden="true"></div>
+<aside id="mobile-panel" class="invisible fixed inset-y-0 right-0 z-[45] flex w-[min(20rem,88vw)] translate-x-full flex-col overflow-y-auto bg-ink px-5 pb-8 pt-24 text-white shadow-2xl transition-all duration-300 ease-in-out lg:hidden" aria-label="Menu navigasi" inert>
+  <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-pu">Akses Cepat</p>
+  <ul class="space-y-2">
+    <li><a href="dokumen-perencanaan.html" aria-current="page" class="mlink flex items-center gap-4 rounded-xl bg-pu p-4 text-ink"><i data-lucide="file-text" class="h-6 w-6 shrink-0"></i><span><span class="block font-semibold">Dokumen Perencanaan</span><span class="block text-xs">Renstra, Renja, LKjIP</span></span></a></li>
+    <li><a href="index.html#aduan" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="message-square-warning" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Form Pengaduan Warga</span><span class="block text-xs text-white/60">Laporkan kerusakan infrastruktur</span></span></a></li>
+    <li><a href="pengumuman.html" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="megaphone" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Pengumuman Dinas</span><span class="block text-xs text-white/60">Tender dan pengalihan jalan</span></span></a></li>
+    <li><a href="berita.html" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="newspaper" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Berita Terbaru</span><span class="block text-xs text-white/60">Dokumentasi pengerjaan proyek</span></span></a></li>
+  </ul>
+  <a href="index.html" class="mlink mt-6 rounded-lg border-2 border-white/30 px-5 py-3.5 text-center font-semibold transition hover:border-pu hover:text-pu">Kembali ke Beranda</a>
+  <p class="mt-auto pt-8 text-xs leading-relaxed text-white/50">Dinas Pekerjaan Umum dan Penataan Ruang<br>Kabupaten Muna Barat, Sulawesi Tenggara</p>
+</aside>
+
+<main id="konten">
+  <!-- Page header -->
+  <section class="on-dark bg-ink text-white">
+    <div class="mx-auto max-w-5xl px-4 pb-14 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+      <nav aria-label="Breadcrumb"><ol class="flex items-center gap-2 text-sm text-white/70"><li><a href="index.html" class="transition hover:text-pu">Beranda</a></li><li aria-hidden="true"><i data-lucide="chevron-right" class="h-4 w-4"></i></li><li aria-current="page" class="font-semibold text-pu">Dokumen Perencanaan</li></ol></nav>
+      <h1 class="mt-5 text-3xl font-extrabold tracking-tight sm:text-5xl">Dokumen <span class="text-pu">Perencanaan</span></h1>
+      <p class="mt-4 max-w-2xl leading-relaxed text-white/80">Kumpulan dokumen resmi perencanaan dan pelaporan kinerja Dinas PUPR Kabupaten Muna Barat. Cari, saring berdasarkan jenis dan tahun, lalu unduh dalam format PDF.</p>
+    </div>
+    <div class="hazard h-2"></div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <!-- Kategori -->
+    <div id="tabs" class="flex flex-wrap gap-2" role="group" aria-label="Filter jenis dokumen"></div>
+
+    <!-- Toolbar -->
+    <div class="top-[72px] z-30 mt-5 rounded-2xl border border-ink/10 bg-white/95 p-3 shadow-sm backdrop-blur-md lg:sticky">
+      <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
+        <div class="relative"><label for="q" class="sr-only">Cari dokumen</label><i data-lucide="search" class="pointer-events-none absolute left-3.5 top-1/2 h-5 w-5 -translate-y-1/2 text-ink/50"></i>
+          <input id="q" type="search" maxlength="80" autocomplete="off" placeholder="Cari judul atau kata kunci…" class="w-full rounded-lg border border-ink/20 bg-white py-3 pl-11 pr-4 outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60"></div>
+        <div><label for="tahun" class="sr-only">Tahun</label><select id="tahun" class="w-full rounded-lg border border-ink/20 bg-white px-4 py-3 outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60"></select></div>
+        <div><label for="urut" class="sr-only">Urutkan</label><select id="urut" class="w-full rounded-lg border border-ink/20 bg-white px-4 py-3 outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60"><option value="baru">Terbaru</option><option value="lama">Terlama</option><option value="abjad">Judul A–Z</option></select></div>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+      <p id="hasil" class="text-sm font-medium text-ink/70" role="status" aria-live="polite"></p>
+      <button id="reset" type="button" class="hidden items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold underline decoration-pu decoration-4 underline-offset-4 transition hover:bg-pu/30"><i data-lucide="rotate-ccw" class="h-4 w-4"></i>Reset filter</button>
+    </div>
+
+    <ul id="list" class="mt-4 space-y-4"></ul>
+    <noscript><p class="rounded-xl border border-ink/10 bg-white p-6">Aktifkan JavaScript untuk menampilkan daftar dokumen.</p></noscript>
+
+    <div id="empty" class="mt-4 hidden rounded-2xl border-2 border-dashed border-ink/20 bg-white p-10 text-center">
+      <i data-lucide="file-search" class="mx-auto h-12 w-12 text-ink/40"></i>
+      <h2 class="mt-4 text-xl font-bold">Dokumen tidak ditemukan</h2>
+      <p class="mx-auto mt-1 max-w-sm text-sm text-ink/70">Coba kata kunci lain atau hapus sebagian filter yang aktif.</p>
+      <button id="empty-reset" type="button" class="mt-5 rounded-lg bg-pu px-6 py-3 font-bold transition hover:bg-pu-deep">Tampilkan semua dokumen</button>
+    </div>
+
+    <div class="mt-8 text-center"><button id="more" type="button" class="hidden items-center gap-2 rounded-lg border-2 border-ink px-7 py-3.5 font-bold transition hover:bg-ink hover:text-white"><i data-lucide="chevrons-down" class="h-5 w-5"></i>Muat lebih banyak</button></div>
+
+    <aside class="mt-12 flex items-start gap-3 rounded-xl border-l-8 border-ink bg-pu p-5" role="note"><i data-lucide="info" class="mt-0.5 h-6 w-6 shrink-0"></i><p class="text-sm font-medium">Dokumen tidak dapat dibuka? Hubungi kami melalui <a href="index.html#aduan" class="font-bold underline underline-offset-2">formulir aduan</a> dan sebutkan judul dokumen yang Anda cari.</p></aside>
+  </section>
+</main>
+
+<footer class="on-dark bg-ink text-white">
+  <div class="hazard h-2"></div>
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+    <div><div class="flex items-center gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-lg bg-pu text-ink"><i data-lucide="hard-hat" class="h-6 w-6"></i></span><p class="font-extrabold">Dinas PUPR Kabupaten Muna Barat</p></div><p class="mt-4 max-w-sm text-sm leading-relaxed text-white/70">Dinas Pekerjaan Umum dan Penataan Ruang. Raha, Kabupaten Muna Barat, Sulawesi Tenggara.</p></div>
+    <nav aria-label="Tautan footer"><p class="text-sm font-semibold uppercase tracking-wider text-pu">Layanan</p><ul class="mt-4 space-y-2.5 text-sm text-white/80"><li><a class="transition hover:text-pu" href="dokumen-perencanaan.html">Dokumen Perencanaan</a></li><li><a class="transition hover:text-pu" href="index.html#aduan">Aduan Masyarakat</a></li><li><a class="transition hover:text-pu" href="lacak-aduan.html">Lacak Aduan</a></li><li><a class="transition hover:text-pu" href="pengumuman.html">Pengumuman Resmi</a></li><li><a class="transition hover:text-pu" href="berita.html">Berita Terbaru</a></li></ul></nav>
+    <div><p class="text-sm font-semibold uppercase tracking-wider text-pu">Jam Layanan</p><ul class="mt-4 space-y-2.5 text-sm text-white/80"><li>Senin – Kamis: 08.00 – 16.00 WITA</li><li>Jumat: 08.00 – 11.30 WITA</li></ul></div>
+  </div>
+  <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-white/60">© 2026 Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Muna Barat. Hak cipta dilindungi.</div>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const icons = () => window.lucide && lucide.createIcons();
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ================= DATA DOKUMEN =================
+   Ganti isi array ini dengan dokumen resmi. `file` = path PDF di server.
+   kat: Renstra | Renja | LKjIP · tahun: angka · terbit: YYYY-MM-DD */
+const DOKUMEN = [
+  { kat: 'Renstra', judul: 'Renstra Dinas PUPR Kabupaten Muna Barat 2025–2029', ket: 'Arah kebijakan, tujuan, sasaran, dan program strategis perangkat daerah periode 2025–2029.', tahun: 2025, terbit: '2025-06-12', ukuran: '4,8 MB', hal: 182, file: 'assets/dokumen/renstra-2025-2029.pdf' },
+  { kat: 'Renstra', judul: 'Renstra Dinas PUPR Kabupaten Muna Barat 2021–2026', ket: 'Rencana strategis perangkat daerah periode 2021–2026 beserta indikator kinerja utama.', tahun: 2021, terbit: '2021-09-20', ukuran: '3,9 MB', hal: 164, file: 'assets/dokumen/renstra-2021-2026.pdf' },
+  { kat: 'Renja', judul: 'Renja Dinas PUPR Kabupaten Muna Barat Tahun 2026', ket: 'Program, kegiatan, dan target pembangunan infrastruktur tahun anggaran 2026.', tahun: 2026, terbit: '2025-10-02', ukuran: '2,1 MB', hal: 96, file: 'assets/dokumen/renja-2026.pdf' },
+  { kat: 'Renja', judul: 'Renja Perubahan Dinas PUPR Kabupaten Muna Barat Tahun 2025', ket: 'Penyesuaian program dan kegiatan tahun 2025 berdasarkan perubahan anggaran.', tahun: 2025, terbit: '2025-08-18', ukuran: '1,2 MB', hal: 54, file: 'assets/dokumen/renja-perubahan-2025.pdf' },
+  { kat: 'Renja', judul: 'Renja Dinas PUPR Kabupaten Muna Barat Tahun 2025', ket: 'Rencana kerja tahunan bidang jalan, jembatan, sumber daya air, dan penataan ruang.', tahun: 2025, terbit: '2024-10-08', ukuran: '2,0 MB', hal: 92, file: 'assets/dokumen/renja-2025.pdf' },
+  { kat: 'Renja', judul: 'Renja Dinas PUPR Kabupaten Muna Barat Tahun 2024', ket: 'Rencana kerja tahunan perangkat daerah untuk tahun anggaran 2024.', tahun: 2024, terbit: '2023-10-10', ukuran: '1,9 MB', hal: 88, file: 'assets/dokumen/renja-2024.pdf' },
+  { kat: 'Renja', judul: 'Renja Dinas PUPR Kabupaten Muna Barat Tahun 2023', ket: 'Rencana kerja tahunan perangkat daerah untuk tahun anggaran 2023.', tahun: 2023, terbit: '2022-10-11', ukuran: '1,8 MB', hal: 84, file: 'assets/dokumen/renja-2023.pdf' },
+  { kat: 'Renja', judul: 'Renja Dinas PUPR Kabupaten Muna Barat Tahun 2022', ket: 'Rencana kerja tahunan perangkat daerah untuk tahun anggaran 2022.', tahun: 2022, terbit: '2021-10-12', ukuran: '1,7 MB', hal: 80, file: 'assets/dokumen/renja-2022.pdf' },
+  { kat: 'LKjIP', judul: 'LKjIP Dinas PUPR Kabupaten Muna Barat Tahun 2025', ket: 'Laporan capaian kinerja dan realisasi program tahun anggaran 2025.', tahun: 2025, terbit: '2026-02-27', ukuran: '3,4 MB', hal: 128, file: 'assets/dokumen/lkjip-2025.pdf' },
+  { kat: 'LKjIP', judul: 'LKjIP Dinas PUPR Kabupaten Muna Barat Tahun 2024', ket: 'Laporan capaian kinerja dan realisasi program tahun anggaran 2024.', tahun: 2024, terbit: '2025-02-26', ukuran: '3,2 MB', hal: 122, file: 'assets/dokumen/lkjip-2024.pdf' },
+  { kat: 'LKjIP', judul: 'LKjIP Dinas PUPR Kabupaten Muna Barat Tahun 2023', ket: 'Laporan capaian kinerja dan realisasi program tahun anggaran 2023.', tahun: 2023, terbit: '2024-02-28', ukuran: '3,0 MB', hal: 116, file: 'assets/dokumen/lkjip-2023.pdf' },
+  { kat: 'LKjIP', judul: 'LKjIP Dinas PUPR Kabupaten Muna Barat Tahun 2022', ket: 'Laporan capaian kinerja dan realisasi program tahun anggaran 2022.', tahun: 2022, terbit: '2023-02-24', ukuran: '2,9 MB', hal: 110, file: 'assets/dokumen/lkjip-2022.pdf' },
+  { kat: 'LKjIP', judul: 'LKjIP Dinas PUPR Kabupaten Muna Barat Tahun 2021', ket: 'Laporan capaian kinerja dan realisasi program tahun anggaran 2021.', tahun: 2021, terbit: '2022-02-25', ukuran: '2,7 MB', hal: 104, file: 'assets/dokumen/lkjip-2021.pdf' }
+];
+const KAT = { Renstra: { ico: 'target', label: 'Rencana Strategis' }, Renja: { ico: 'calendar-check', label: 'Rencana Kerja' }, LKjIP: { ico: 'chart-no-axes-combined', label: 'Laporan Kinerja' } };
+const PAGE = 6;
+const tgl = iso => new Date(iso + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+/* ---------- State + URL ---------- */
+const params = new URLSearchParams(location.search);
+const state = { kat: KAT[params.get('kategori')] ? params.get('kategori') : '', tahun: params.get('tahun') || '', q: (params.get('q') || '').slice(0, 80), urut: ['baru', 'lama', 'abjad'].includes(params.get('urut')) ? params.get('urut') : 'baru', shown: PAGE };
+
+const years = [...new Set(DOKUMEN.map(d => d.tahun))].sort((a, b) => b - a);
+$('#tahun').innerHTML = '<option value="">Semua tahun</option>' + years.map(y => `<option value="${y}">${y}</option>`).join('');
+if (!years.includes(+state.tahun)) state.tahun = '';
+$('#q').value = state.q; $('#tahun').value = state.tahun; $('#urut').value = state.urut;
+
+function renderTabs() {
+  const defs = [['', 'Semua', DOKUMEN.length], ...Object.keys(KAT).map(k => [k, k, DOKUMEN.filter(d => d.kat === k).length])];
+  $('#tabs').innerHTML = defs.map(([v, l, n]) => {
+    const on = state.kat === v;
+    return `<button type="button" data-kat="${v}" aria-pressed="${on}" class="flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-sm font-bold transition ${on ? 'border-ink bg-ink text-white' : 'border-ink/15 bg-white hover:border-ink'}">${l}<span class="rounded-full px-2 py-0.5 text-xs ${on ? 'bg-pu text-ink' : 'bg-ink/10'}">${n}</span></button>`;
+  }).join('');
+}
+
+function filtered() {
+  const q = state.q.trim().toLowerCase();
+  const r = DOKUMEN.filter(d => (!state.kat || d.kat === state.kat) && (!state.tahun || d.tahun === +state.tahun) && (!q || (d.judul + ' ' + d.ket + ' ' + d.kat + ' ' + d.tahun).toLowerCase().includes(q)));
+  const s = { baru: (a, b) => b.terbit.localeCompare(a.terbit), lama: (a, b) => a.terbit.localeCompare(b.terbit), abjad: (a, b) => a.judul.localeCompare(b.judul, 'id') };
+  return r.sort(s[state.urut]);
+}
+
+function row(d) {
+  const k = KAT[d.kat];
+  return `<li class="doc-row flex flex-col gap-5 rounded-2xl border border-ink/10 bg-white p-5 transition hover:border-pu hover:shadow-lg sm:flex-row sm:items-center sm:p-6">
+    <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-ink text-pu"><i data-lucide="${k.ico}" class="h-7 w-7"></i></span>
+    <div class="min-w-0 flex-1">
+      <div class="flex flex-wrap items-center gap-2"><span class="rounded bg-pu px-2 py-0.5 text-[11px] font-bold uppercase">${esc(d.kat)}</span><span class="text-xs font-semibold text-ink/60">${esc(k.label)} · ${d.tahun}</span></div>
+      <h2 class="mt-1.5 text-lg font-bold leading-snug">${esc(d.judul)}</h2>
+      <p class="mt-1 text-sm leading-relaxed text-ink/70">${esc(d.ket)}</p>
+      <dl class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs text-ink/70"><div class="flex items-center gap-1.5"><dt class="sr-only">Tanggal terbit</dt><i data-lucide="calendar" class="h-3.5 w-3.5"></i><dd>${tgl(d.terbit)}</dd></div><div class="flex items-center gap-1.5"><dt class="sr-only">Jumlah halaman</dt><i data-lucide="file" class="h-3.5 w-3.5"></i><dd>${d.hal} halaman</dd></div><div class="flex items-center gap-1.5"><dt class="sr-only">Ukuran berkas</dt><i data-lucide="hard-drive" class="h-3.5 w-3.5"></i><dd>${esc(d.ukuran)}</dd></div></dl>
+    </div>
+    <div class="flex shrink-0 flex-col gap-2 sm:w-40">
+      <a href="${esc(d.file)}" download class="inline-flex items-center justify-center gap-2 rounded-lg bg-pu px-4 py-3 text-sm font-bold transition hover:bg-pu-deep" aria-label="Unduh PDF ${esc(d.judul)}"><i data-lucide="download" class="h-4 w-4"></i>Unduh PDF</a>
+      <a href="${esc(d.file)}" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-ink/15 px-4 py-2.5 text-sm font-semibold transition hover:border-ink" aria-label="Buka pratinjau ${esc(d.judul)}"><i data-lucide="eye" class="h-4 w-4"></i>Pratinjau</a>
+    </div></li>`;
+}
+
+let first = true;
+function render(animate) {
+  const all = filtered(), vis = all.slice(0, state.shown);
+  renderTabs();
+  $('#list').innerHTML = vis.map(row).join('');
+  $('#empty').classList.toggle('hidden', all.length > 0);
+  $('#more').classList.toggle('hidden', vis.length >= all.length); $('#more').classList.toggle('inline-flex', vis.length < all.length);
+  const active = state.kat || state.tahun || state.q.trim();
+  $('#reset').classList.toggle('hidden', !active); $('#reset').classList.toggle('inline-flex', !!active);
+  $('#hasil').textContent = all.length ? `Menampilkan ${vis.length} dari ${all.length} dokumen` : 'Tidak ada dokumen yang cocok';
+  icons();
+  if (animate && window.gsap && !reduce) gsap.from(animate === 'more' ? [...$$('.doc-row')].slice(-Math.min(PAGE, vis.length)) : '.doc-row', { y: 18, opacity: 0, duration: .5, stagger: .06, ease: 'power2.out', clearProps: 'all' });
+  const p = new URLSearchParams();
+  if (state.kat) p.set('kategori', state.kat); if (state.tahun) p.set('tahun', state.tahun); if (state.q.trim()) p.set('q', state.q.trim()); if (state.urut !== 'baru') p.set('urut', state.urut);
+  history.replaceState(null, '', p.toString() ? '?' + p : location.pathname);
+}
+const update = () => { state.shown = PAGE; render(true); };
+
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('[data-kat]'); if (!b) return; state.kat = b.dataset.kat; update(); });
+$('#tahun').addEventListener('change', e => { state.tahun = e.target.value; update(); });
+$('#urut').addEventListener('change', e => { state.urut = e.target.value; update(); });
+let t; $('#q').addEventListener('input', e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; update(); }, 200); });
+$('#more').addEventListener('click', () => { state.shown += PAGE; render('more'); });
+const reset = () => { Object.assign(state, { kat: '', tahun: '', q: '', urut: 'baru' }); $('#q').value = ''; $('#tahun').value = ''; $('#urut').value = 'baru'; update(); };
+$('#reset').addEventListener('click', reset); $('#empty-reset').addEventListener('click', reset);
+
+/* ---------- Navbar mobile (slide-in 300ms) ---------- */
+const btn = $('#menu-btn'), panel = $('#mobile-panel'), overlay = $('#overlay'), html = document.documentElement;
+let open = false;
+function setMenu(v) {
+  const was = open; open = v;
+  btn.classList.toggle('is-open', v); btn.setAttribute('aria-expanded', v); btn.setAttribute('aria-label', v ? 'Tutup menu' : 'Buka menu');
+  panel.classList.toggle('translate-x-0', v); panel.classList.toggle('translate-x-full', !v); panel.classList.toggle('invisible', !v);
+  overlay.classList.toggle('opacity-100', v); overlay.classList.toggle('opacity-0', !v); overlay.classList.toggle('invisible', !v);
+  panel.inert = !v; html.classList.toggle('overflow-hidden', v);
+  if (v) setTimeout(() => panel.querySelector('a').focus({ preventScroll: true }), 320); else if (was) btn.focus({ preventScroll: true });
+}
+btn.addEventListener('click', () => setMenu(!open));
+overlay.addEventListener('click', () => setMenu(false));
+$$('.mlink').forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape' && open) setMenu(false); });
+addEventListener('resize', () => { if (innerWidth >= 1024 && open) setMenu(false); });
+const header = $('#header'), onScroll = () => header.classList.toggle('shadow-md', scrollY > 10);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+icons();
+render(false);
+</script>
+</body>
+</html>

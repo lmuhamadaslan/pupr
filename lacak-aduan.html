@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lacak Aduan Masyarakat — Dinas PUPR Kabupaten Muna Barat</title>
+<meta name="description" content="Pantau progres tindak lanjut aduan infrastruktur Anda di Dinas PUPR Kabupaten Muna Barat menggunakan nomor tiket.">
+<meta name="theme-color" content="#ecc94b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ecc94b'/%3E%3Cpath d='M7 21h18v3H7zM10 21a6 6 0 0 1 12 0z' fill='%231a202c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --color-pu: #ecc94b; --color-pu-deep: #d4a91c; --color-ink: #1a202c; --color-paper: #f7fafc;
+  }
+</style>
+<style>
+  html { scroll-padding-top: 6rem; }
+  body { overflow-x: clip; }
+  .bl { transition: transform .3s ease-in-out, opacity .3s ease-in-out; transform-origin: center; }
+  .is-open .b1 { transform: translateY(7px) rotate(45deg); } .is-open .b2 { opacity: 0; } .is-open .b3 { transform: translateY(-7px) rotate(-45deg); }
+  .hazard { background: repeating-linear-gradient(135deg, #ecc94b 0 14px, #1a202c 14px 28px); }
+  :focus-visible { outline: 3px solid #1a202c; outline-offset: 2px; }
+  .on-dark :focus-visible { outline-color: #ecc94b; }
+  @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(236,201,75,.7); } 100% { box-shadow: 0 0 0 14px rgba(236,201,75,0); } }
+  .pulse { animation: pulse-ring 1.8s ease-out infinite; }
+  @media print { header, #overlay, #mobile-panel, footer, .no-print { display: none !important; } main > section:first-child { background: #fff !important; color: #000 !important; padding-top: 1rem !important; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; animation: none !important; } }
+</style>
+</head>
+
+<body class="bg-paper font-sans text-ink antialiased selection:bg-pu selection:text-ink">
+<a href="#konten" class="no-print absolute left-4 top-2 z-[100] -translate-y-20 rounded bg-pu px-4 py-2 font-semibold text-ink focus:translate-y-0">Lewati ke konten utama</a>
+
+<header id="header" class="fixed inset-x-0 top-0 z-50 border-b border-ink/5 bg-white/90 backdrop-blur-md transition-shadow duration-300">
+  <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[72px] lg:px-8" aria-label="Navigasi utama">
+    <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="Dinas PUPR Kabupaten Muna Barat — beranda">
+      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-pu"><i data-lucide="hard-hat" class="h-6 w-6"></i></span>
+      <span class="min-w-0 leading-tight"><span class="block truncate text-sm font-extrabold tracking-tight sm:text-base">Dinas PUPR</span><span class="block truncate text-[11px] font-medium text-ink/70 sm:text-xs">Kabupaten Muna Barat</span></span>
+    </a>
+    <ul class="hidden items-center gap-1 text-sm font-semibold lg:flex">
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="index.html#beranda">Beranda</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="dokumen-perencanaan.html">Dokumen</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="index.html#aduan">Aduan Masyarakat</a></li>
+      <li><a class="rounded-md bg-pu px-3 py-2" href="lacak-aduan.html" aria-current="page">Lacak Aduan</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="pengumuman.html">Pengumuman</a></li>
+      <li><a class="rounded-md px-3 py-2 transition hover:bg-ink/5" href="berita.html">Berita</a></li>
+    </ul>
+    <a href="index.html#aduan" class="hidden rounded-lg bg-pu px-5 py-2.5 text-sm font-bold transition hover:bg-pu-deep xl:inline-block">Lapor Sekarang</a>
+    <button id="menu-btn" type="button" class="relative flex h-11 w-11 items-center justify-center rounded-lg lg:hidden" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-panel">
+      <span class="relative block h-[16px] w-6"><span class="bl b1 absolute left-0 top-0 h-0.5 w-full rounded bg-ink"></span><span class="bl b2 absolute left-0 top-[7px] h-0.5 w-full rounded bg-ink"></span><span class="bl b3 absolute left-0 top-[14px] h-0.5 w-full rounded bg-ink"></span></span>
+    </button>
+  </nav>
+</header>
+
+<div id="overlay" class="invisible fixed inset-0 z-40 bg-ink/60 opacity-0 transition-all duration-300 ease-in-out lg:hidden" aria-hidden="true"></div>
+<aside id="mobile-panel" class="invisible fixed inset-y-0 right-0 z-[45] flex w-[min(20rem,88vw)] translate-x-full flex-col overflow-y-auto bg-ink px-5 pb-8 pt-24 text-white shadow-2xl transition-all duration-300 ease-in-out lg:hidden" aria-label="Menu navigasi" inert>
+  <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-pu">Akses Cepat</p>
+  <ul class="space-y-2">
+    <li><a href="dokumen-perencanaan.html" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="file-text" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Dokumen Perencanaan</span><span class="block text-xs text-white/60">Renstra, Renja, LKjIP</span></span></a></li>
+    <li><a href="index.html#aduan" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="message-square-warning" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Form Pengaduan Warga</span><span class="block text-xs text-white/60">Laporkan kerusakan infrastruktur</span></span></a></li>
+    <li><a href="lacak-aduan.html" aria-current="page" class="mlink flex items-center gap-4 rounded-xl bg-pu p-4 text-ink"><i data-lucide="search-check" class="h-6 w-6 shrink-0"></i><span><span class="block font-semibold">Lacak Aduan</span><span class="block text-xs">Pantau progres laporan Anda</span></span></a></li>
+    <li><a href="pengumuman.html" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="megaphone" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Pengumuman Dinas</span><span class="block text-xs text-white/60">Tender dan pengalihan jalan</span></span></a></li>
+    <li><a href="berita.html" class="mlink flex items-center gap-4 rounded-xl bg-white/5 p-4 transition hover:bg-white/10"><i data-lucide="newspaper" class="h-6 w-6 shrink-0 text-pu"></i><span><span class="block font-semibold">Berita Terbaru</span><span class="block text-xs text-white/60">Dokumentasi pengerjaan proyek</span></span></a></li>
+  </ul>
+  <a href="index.html" class="mlink mt-6 rounded-lg border-2 border-white/30 px-5 py-3.5 text-center font-semibold transition hover:border-pu hover:text-pu">Kembali ke Beranda</a>
+  <p class="mt-auto pt-8 text-xs leading-relaxed text-white/50">Dinas Pekerjaan Umum dan Penataan Ruang<br>Kabupaten Muna Barat, Sulawesi Tenggara</p>
+</aside>
+
+<main id="konten">
+  <section class="on-dark bg-ink text-white">
+    <div class="mx-auto max-w-4xl px-4 pb-14 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+      <nav aria-label="Breadcrumb" class="no-print"><ol class="flex items-center gap-2 text-sm text-white/70"><li><a href="index.html" class="transition hover:text-pu">Beranda</a></li><li aria-hidden="true"><i data-lucide="chevron-right" class="h-4 w-4"></i></li><li aria-current="page" class="font-semibold text-pu">Lacak Aduan</li></ol></nav>
+      <h1 class="mt-5 text-3xl font-extrabold tracking-tight sm:text-5xl">Lacak <span class="text-pu">Aduan</span> Anda</h1>
+      <p class="mt-4 max-w-2xl leading-relaxed text-white/80">Masukkan nomor tiket dan 4 digit terakhir nomor HP yang Anda gunakan saat melapor untuk melihat progres penanganan.</p>
+    </div>
+    <div class="hazard h-2"></div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <!-- Form pelacakan -->
+    <form id="track-form" class="no-print rounded-2xl border border-ink/10 bg-white p-5 shadow-sm sm:p-8" novalidate>
+      <div class="grid gap-5 sm:grid-cols-[1fr_11rem]">
+        <div><label for="tiket" class="mb-1.5 block text-sm font-semibold">Nomor Tiket <span class="text-red-700" aria-hidden="true">*</span></label>
+          <input id="tiket" name="tiket" type="text" required maxlength="16" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text" pattern="ADU-[0-9]{4}-[0-9]{1,6}" placeholder="ADU-2026-000123" aria-describedby="e-tiket" class="w-full rounded-lg border border-ink/20 bg-paper px-4 py-3 font-mono tracking-wide outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60 aria-[invalid=true]:border-red-600">
+          <p id="e-tiket" class="mt-1 min-h-5 text-sm text-red-700"></p></div>
+        <div><label for="hp4" class="mb-1.5 block text-sm font-semibold">4 Digit Akhir HP <span class="text-red-700" aria-hidden="true">*</span></label>
+          <input id="hp4" name="hp4" type="text" required maxlength="4" inputmode="numeric" autocomplete="off" pattern="[0-9]{4}" placeholder="1234" aria-describedby="e-hp4" class="w-full rounded-lg border border-ink/20 bg-paper px-4 py-3 font-mono tracking-[.3em] outline-none transition focus:border-pu focus:ring-4 focus:ring-pu/60 aria-[invalid=true]:border-red-600">
+          <p id="e-hp4" class="mt-1 min-h-5 text-sm text-red-700"></p></div>
+      </div>
+      <button id="track-btn" type="submit" class="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-pu px-6 py-4 font-bold transition hover:bg-pu-deep focus:ring-4 focus:ring-pu/60 disabled:cursor-not-allowed disabled:opacity-70"><i data-lucide="search" class="h-5 w-5"></i><span id="track-label">Lacak Status</span></button>
+      <p id="track-msg" class="mt-3 min-h-6 text-center text-sm font-medium text-red-700" role="alert"></p>
+      <p class="mt-1 text-center text-xs text-ink/60">Nomor tiket dikirimkan setelah Anda mengirim laporan melalui <a href="index.html#aduan" class="font-semibold underline underline-offset-2">formulir aduan</a>.</p>
+    </form>
+
+    <!-- Mode demo -->
+    <div id="demo" class="no-print mt-5 hidden rounded-xl border-l-8 border-ink bg-pu p-5" role="note">
+      <p class="flex items-center gap-2 text-sm font-bold"><i data-lucide="flask-conical" class="h-5 w-5"></i>Mode demo — data di halaman ini hanya contoh</p>
+      <p class="mt-1 text-sm">Pilih salah satu contoh untuk mengisi formulir:</p>
+      <div id="demo-btns" class="mt-3 flex flex-wrap gap-2"></div>
+    </div>
+
+    <div id="skeleton" class="mt-8 hidden animate-pulse space-y-4" aria-hidden="true"><div class="h-40 rounded-2xl bg-ink/10"></div><div class="h-32 rounded-2xl bg-ink/10"></div><div class="h-48 rounded-2xl bg-ink/10"></div></div>
+    <div id="result" class="mt-8 hidden" aria-live="polite"></div>
+  </section>
+</main>
+
+<footer class="on-dark bg-ink text-white">
+  <div class="hazard h-2"></div>
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+    <div><div class="flex items-center gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-lg bg-pu text-ink"><i data-lucide="hard-hat" class="h-6 w-6"></i></span><p class="font-extrabold">Dinas PUPR Kabupaten Muna Barat</p></div><p class="mt-4 max-w-sm text-sm leading-relaxed text-white/70">Dinas Pekerjaan Umum dan Penataan Ruang. Raha, Kabupaten Muna Barat, Sulawesi Tenggara.</p></div>
+    <nav aria-label="Tautan footer"><p class="text-sm font-semibold uppercase tracking-wider text-pu">Layanan</p><ul class="mt-4 space-y-2.5 text-sm text-white/80"><li><a class="transition hover:text-pu" href="dokumen-perencanaan.html">Dokumen Perencanaan</a></li><li><a class="transition hover:text-pu" href="index.html#aduan">Aduan Masyarakat</a></li><li><a class="transition hover:text-pu" href="lacak-aduan.html">Lacak Aduan</a></li><li><a class="transition hover:text-pu" href="pengumuman.html">Pengumuman Resmi</a></li><li><a class="transition hover:text-pu" href="berita.html">Berita Terbaru</a></li></ul></nav>
+    <div><p class="text-sm font-semibold uppercase tracking-wider text-pu">Jam Layanan</p><ul class="mt-4 space-y-2.5 text-sm text-white/80"><li>Senin – Kamis: 08.00 – 16.00 WITA</li><li>Jumat: 08.00 – 11.30 WITA</li></ul></div>
+  </div>
+  <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-white/60">© 2026 Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Muna Barat. Hak cipta dilindungi.</div>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const icons = () => window.lucide && lucide.createIcons();
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+/* ================= SUMBER DATA =================
+   Isi TRACK_ENDPOINT agar halaman memakai server Anda (mode demo otomatis mati).
+   Kontrak API:  GET {TRACK_ENDPOINT}?tiket=ADU-2026-000123&hp=1234
+     200 → JSON tiket (lihat bentuk objek di DEMO di bawah) · 404 → tiket/HP tidak cocok.
+   Server WAJIB memverifikasi tiket + 4 digit HP dan membatasi laju permintaan (rate limit). */
+const TRACK_ENDPOINT = '';
+const DEMO = [
+  { id: 'ADU-2026-000127', hp4: '4521', nama: 'La Ode Ahmad', kategori: 'Jalan', lokasi: 'Jl. Poros Desa, Kec. Katobu', uraian: 'Terdapat lubang besar di badan jalan yang membahayakan pengendara sepeda motor, terutama pada malam hari.', tanggal: '2026-10-26T09:14', status: 'proses', eta: '2026-11-06',
+    log: [{ t: '2026-10-30T08:00', s: 'proses', judul: 'Dalam penanganan', cat: 'Tim pemeliharaan dijadwalkan melakukan penambalan lubang pada ruas yang dilaporkan.', oleh: 'Bidang Jalan dan Jembatan' }, { t: '2026-10-27T10:30', s: 'verifikasi', judul: 'Laporan diverifikasi', cat: 'Lokasi sesuai dan termasuk ruas jalan kabupaten. Laporan diteruskan ke bidang teknis.', oleh: 'Tim Verifikasi' }, { t: '2026-10-26T09:14', s: 'diterima', judul: 'Laporan diterima', cat: 'Laporan Anda telah tercatat dalam sistem.', oleh: 'Sistem' }] },
+  { id: 'ADU-2026-000098', hp4: '7788', nama: 'Wa Ode Sari', kategori: 'Drainase / Saluran Air', lokasi: 'Lorong Mawar, Kel. Laino', uraian: 'Saluran air tersumbat sampah sehingga air meluap ke jalan saat hujan.', tanggal: '2026-09-18T14:05', status: 'selesai', selesai: '2026-10-02',
+    log: [{ t: '2026-10-02T15:20', s: 'selesai', judul: 'Penanganan selesai', cat: 'Saluran telah dibersihkan dan diperbaiki. Terima kasih atas laporan Anda.', oleh: 'Bidang Sumber Daya Air' }, { t: '2026-09-25T09:00', s: 'proses', judul: 'Dalam penanganan', cat: 'Petugas melakukan pengerukan sedimen dan pembersihan saluran.', oleh: 'Bidang Sumber Daya Air' }, { t: '2026-09-20T11:45', s: 'verifikasi', judul: 'Laporan diverifikasi', cat: 'Kondisi saluran sesuai laporan dan masuk kewenangan dinas.', oleh: 'Tim Verifikasi' }, { t: '2026-09-18T14:05', s: 'diterima', judul: 'Laporan diterima', cat: 'Laporan Anda telah tercatat dalam sistem.', oleh: 'Sistem' }] },
+  { id: 'ADU-2026-000140', hp4: '1020', nama: 'Rahmat Hidayat', kategori: 'Jembatan', lokasi: 'Jembatan penghubung Desa Lasehao', uraian: 'Papan lantai jembatan kayu mulai lapuk dan beberapa bagian bolong.', tanggal: '2026-11-01T16:42', status: 'diterima',
+    log: [{ t: '2026-11-01T16:42', s: 'diterima', judul: 'Laporan diterima', cat: 'Laporan Anda telah tercatat dan menunggu verifikasi petugas.', oleh: 'Sistem' }] },
+  { id: 'ADU-2026-000085', hp4: '3310', nama: 'Nur Aini', kategori: 'Jalan', lokasi: 'Ruas jalan provinsi dekat pelabuhan', uraian: 'Aspal bergelombang dan retak panjang pada ruas menuju pelabuhan.', tanggal: '2026-09-02T08:30', status: 'dialihkan',
+    log: [{ t: '2026-09-05T13:10', s: 'dialihkan', judul: 'Diteruskan ke instansi berwenang', cat: 'Ruas yang dilaporkan merupakan kewenangan pemerintah provinsi. Laporan telah diteruskan; silakan konfirmasi ke instansi terkait untuk tindak lanjut.', oleh: 'Tim Verifikasi' }, { t: '2026-09-02T08:30', s: 'diterima', judul: 'Laporan diterima', cat: 'Laporan Anda telah tercatat dalam sistem.', oleh: 'Sistem' }] }
+];
+const ST = {
+  diterima: { label: 'Diterima', cls: 'bg-ink text-white', ico: 'inbox', idx: 0 },
+  verifikasi: { label: 'Diverifikasi', cls: 'bg-sky-800 text-white', ico: 'clipboard-check', idx: 1 },
+  proses: { label: 'Dalam Penanganan', cls: 'bg-pu text-ink', ico: 'hard-hat', idx: 2 },
+  selesai: { label: 'Selesai', cls: 'bg-emerald-700 text-white', ico: 'circle-check-big', idx: 3 },
+  dialihkan: { label: 'Diteruskan ke Instansi Lain', cls: 'bg-red-700 text-white', ico: 'arrow-right-left', idx: 1 }
+};
+const STEPS = [['Diterima', 'inbox'], ['Verifikasi', 'clipboard-check'], ['Penanganan', 'hard-hat'], ['Selesai', 'circle-check-big']];
+const fDT = iso => new Date(iso).toLocaleString('id-ID', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }).replace('.', ':') + ' WITA';
+const fD = iso => new Date(iso).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+const mask = n => n.split(' ').map(w => w[0] + '•'.repeat(Math.min(w.length - 1, 4))).join(' ');
+
+async function lookup(id, hp4) {
+  if (TRACK_ENDPOINT) {
+    const r = await fetch(`${TRACK_ENDPOINT}?tiket=${encodeURIComponent(id)}&hp=${encodeURIComponent(hp4)}`, { headers: { Accept: 'application/json' } });
+    if (r.status === 404) return null;
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }
+  await sleep(700);
+  return DEMO.find(d => d.id === id && d.hp4 === hp4) || null;
+}
+
+/* ---------- Render hasil ---------- */
+function stepper(d) {
+  const st = ST[d.status], stopped = d.status === 'dialihkan';
+  return `<ol class="grid md:grid-cols-4">${STEPS.map(([lbl, ico], i) => {
+    const done = d.status === 'selesai' ? true : i < st.idx, cur = !done && i === st.idx && !stopped, stop = stopped && i === st.idx, off = stopped && i > st.idx;
+    const circ = stop ? 'bg-red-700 text-white' : done ? 'bg-ink text-pu' : cur ? 'bg-pu text-ink ring-4 ring-pu/40 pulse' : 'border-2 border-ink/20 bg-white text-ink/40';
+    const next = i < STEPS.length - 1 ? `<span class="conn absolute left-[21px] top-11 h-[calc(100%-2.75rem)] w-0.5 md:left-1/2 md:top-[21px] md:h-0.5 md:w-full ${done && i < st.idx || (d.status === 'selesai') ? 'bg-ink' : 'bg-ink/15'}" aria-hidden="true"></span>` : '';
+    return `<li class="step relative flex gap-4 pb-8 last:pb-0 md:block md:pb-0 md:text-center" ${cur ? 'aria-current="step"' : ''}>${next}
+      <span class="circ relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full md:mx-auto ${circ}"><i data-lucide="${stop ? 'x' : done ? 'check' : ico}" class="h-5 w-5"></i></span>
+      <span class="md:mt-3 md:block"><span class="block font-bold ${off ? 'text-ink/40' : ''}">${lbl}</span><span class="block text-xs ${off ? 'text-ink/40' : 'text-ink/60'}">${stop ? 'Diteruskan' : done ? 'Selesai' : cur ? 'Sedang berlangsung' : off ? 'Tidak dilanjutkan' : 'Menunggu'}</span></span></li>`;
+  }).join('')}</ol>`;
+}
+function render(d) {
+  const st = ST[d.status];
+  const info = d.status === 'proses' && d.eta ? `<div class="mt-5 flex items-start gap-3 rounded-xl bg-pu/30 p-4 text-sm"><i data-lucide="calendar-clock" class="mt-0.5 h-5 w-5 shrink-0"></i><p><strong>Estimasi penyelesaian:</strong> ${fD(d.eta)}. Jadwal dapat berubah mengikuti kondisi lapangan dan cuaca.</p></div>`
+    : d.status === 'selesai' ? `<div class="mt-5 flex items-start gap-3 rounded-xl bg-emerald-50 p-4 text-sm text-emerald-900"><i data-lucide="circle-check-big" class="mt-0.5 h-5 w-5 shrink-0"></i><p>Aduan Anda telah diselesaikan pada <strong>${fD(d.selesai || d.log[0].t)}</strong>. Jika masalah masih ada, silakan ajukan laporan baru.</p></div>`
+    : d.status === 'dialihkan' ? `<div class="mt-5 flex items-start gap-3 rounded-xl bg-red-50 p-4 text-sm text-red-900"><i data-lucide="info" class="mt-0.5 h-5 w-5 shrink-0"></i><p>Laporan ini di luar kewenangan Dinas PUPR Kabupaten Muna Barat dan telah diteruskan. Lihat catatan petugas pada riwayat di bawah.</p></div>` : '';
+  $('#result').innerHTML = `
+  <article class="rcard overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-sm">
+    <div class="flex flex-wrap items-start justify-between gap-4 border-b border-ink/10 p-5 sm:p-7">
+      <div class="min-w-0"><p class="text-xs font-semibold uppercase tracking-wider text-ink/60">Nomor Tiket</p>
+        <div class="mt-1 flex flex-wrap items-center gap-2"><p class="break-all font-mono text-xl font-bold sm:text-2xl">${esc(d.id)}</p><button id="copy" type="button" class="no-print inline-flex items-center gap-1.5 rounded-md border border-ink/15 px-2.5 py-1 text-xs font-semibold transition hover:border-ink" aria-label="Salin nomor tiket"><i data-lucide="copy" class="h-3.5 w-3.5"></i><span>Salin</span></button></div></div>
+      <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${st.cls}"><i data-lucide="${st.ico}" class="h-4 w-4"></i>${st.label}</span>
+    </div>
+    <dl class="grid gap-5 p-5 text-sm sm:grid-cols-2 sm:p-7">
+      <div><dt class="text-xs font-semibold uppercase tracking-wider text-ink/60">Pelapor</dt><dd class="mt-1 font-medium">${esc(mask(d.nama))}</dd></div>
+      <div><dt class="text-xs font-semibold uppercase tracking-wider text-ink/60">Tanggal Lapor</dt><dd class="mt-1 font-medium">${fDT(d.tanggal)}</dd></div>
+      <div><dt class="text-xs font-semibold uppercase tracking-wider text-ink/60">Kategori</dt><dd class="mt-1 font-medium">${esc(d.kategori)}</dd></div>
+      <div><dt class="text-xs font-semibold uppercase tracking-wider text-ink/60">Lokasi</dt><dd class="mt-1 font-medium">${esc(d.lokasi)}</dd></div>
+      <div class="sm:col-span-2"><dt class="text-xs font-semibold uppercase tracking-wider text-ink/60">Uraian Laporan</dt><dd class="mt-1 leading-relaxed text-ink/80">${esc(d.uraian)}</dd></div>
+    </dl>
+  </article>
+  <article class="rcard mt-6 rounded-2xl border border-ink/10 bg-white p-5 shadow-sm sm:p-7"><h2 class="mb-6 text-lg font-bold">Progres Penanganan</h2>${stepper(d)}${info}</article>
+  <article class="rcard mt-6 rounded-2xl border border-ink/10 bg-white p-5 shadow-sm sm:p-7"><h2 class="mb-6 text-lg font-bold">Riwayat Tindak Lanjut</h2>
+    <ol class="relative space-y-7 border-l-2 border-ink/15 pl-6">${d.log.map((l, i) => `<li class="relative"><span class="absolute -left-[33px] top-0.5 flex h-4 w-4 items-center justify-center rounded-full ${i === 0 ? 'bg-pu ring-4 ring-pu/40' : 'bg-ink'}"></span>
+      <time datetime="${esc(l.t)}" class="text-xs font-semibold text-ink/60">${fDT(l.t)}</time><h3 class="mt-0.5 font-bold">${esc(l.judul)}</h3><p class="mt-1 text-sm leading-relaxed text-ink/75">${esc(l.cat)}</p><p class="mt-1.5 text-xs font-medium text-ink/55">Oleh: ${esc(l.oleh)}</p></li>`).join('')}</ol></article>
+  <div class="no-print mt-6 flex flex-col gap-3 sm:flex-row">
+    <button id="refresh" type="button" class="inline-flex items-center justify-center gap-2 rounded-lg bg-pu px-6 py-3.5 font-bold transition hover:bg-pu-deep"><i data-lucide="refresh-cw" class="h-5 w-5"></i>Perbarui Status</button>
+    <button id="print" type="button" class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-ink/15 px-6 py-3.5 font-semibold transition hover:border-ink"><i data-lucide="printer" class="h-5 w-5"></i>Cetak</button>
+    <a href="index.html#aduan" class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-ink/15 px-6 py-3.5 font-semibold transition hover:border-ink sm:ml-auto"><i data-lucide="plus" class="h-5 w-5"></i>Buat Laporan Baru</a>
+  </div>`;
+  $('#result').classList.remove('hidden'); icons();
+  $('#copy').onclick = async e => { const b = e.currentTarget; try { await navigator.clipboard.writeText(d.id); } catch { const t = document.createElement('textarea'); t.value = d.id; document.body.append(t); t.select(); document.execCommand('copy'); t.remove(); } b.querySelector('span').textContent = 'Tersalin'; setTimeout(() => b.querySelector('span').textContent = 'Salin', 1800); };
+  $('#refresh').onclick = () => run(true);
+  $('#print').onclick = () => print();
+  if (window.gsap && !reduce) {
+    gsap.from('.rcard', { y: 24, opacity: 0, duration: .7, stagger: .12, ease: 'power3.out', clearProps: 'all' });
+    gsap.from('.circ', { scale: .5, opacity: 0, duration: .5, stagger: .12, delay: .3, ease: 'back.out(2)', clearProps: 'all' });
+    gsap.from('.conn', { opacity: 0, duration: .5, stagger: .12, delay: .4, clearProps: 'all' });
+  }
+}
+
+/* ---------- Form: validasi, normalisasi, pelacakan ---------- */
+const form = $('#track-form'), tiket = $('#tiket'), hp4 = $('#hp4'), msg = $('#track-msg');
+const normId = v => { const m = v.toUpperCase().replace(/\s+/g, '').match(/^ADU-?(\d{4})-?(\d{1,6})$/); return m ? `ADU-${m[1]}-${m[2].padStart(6, '0')}` : v.toUpperCase().trim(); };
+tiket.addEventListener('blur', () => { tiket.value = normId(tiket.value); });
+hp4.addEventListener('input', () => { hp4.value = hp4.value.replace(/\D/g, '').slice(0, 4); });
+function check(el, text) { const ok = el.checkValidity(); $('#e-' + el.id).textContent = ok ? '' : (el.validity.valueMissing ? 'Kolom ini wajib diisi.' : text); el.setAttribute('aria-invalid', String(!ok)); return ok; }
+
+let fails = 0, lockUntil = 0, lockTimer;
+function lockTick() {
+  const left = Math.ceil((lockUntil - Date.now()) / 1000), b = $('#track-btn');
+  if (left <= 0) { clearInterval(lockTimer); b.disabled = false; $('#track-label').textContent = 'Lacak Status'; msg.textContent = ''; fails = 0; return; }
+  b.disabled = true; $('#track-label').textContent = `Coba lagi dalam ${left} detik`;
+}
+async function run(refresh) {
+  msg.textContent = '';
+  tiket.value = normId(tiket.value);
+  const a = check(tiket, 'Format: ADU-2026-000123.'), b = check(hp4, 'Masukkan 4 digit angka.');
+  if (!a || !b) { (a ? hp4 : tiket).focus(); return; }
+  if (Date.now() < lockUntil) return;
+  const btn = $('#track-btn'); btn.disabled = true; $('#track-label').textContent = 'Mencari…';
+  $('#result').classList.add('hidden'); $('#skeleton').classList.remove('hidden');
+  try {
+    const d = await lookup(tiket.value, hp4.value);
+    $('#skeleton').classList.add('hidden');
+    if (!d) {
+      fails++;
+      msg.textContent = 'Nomor tiket atau 4 digit terakhir HP tidak sesuai. Periksa kembali data Anda.';
+      if (fails >= 5) { lockUntil = Date.now() + 60000; lockTimer = setInterval(lockTick, 1000); lockTick(); return; }
+    } else {
+      fails = 0; render(d);
+      if (!refresh) $('#result').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      const p = new URLSearchParams(location.search); p.set('tiket', d.id); history.replaceState(null, '', '?' + p);
+    }
+  } catch (e) {
+    $('#skeleton').classList.add('hidden');
+    msg.textContent = 'Layanan sedang tidak dapat dihubungi. Periksa koneksi Anda lalu coba lagi.';
+  }
+  if (Date.now() >= lockUntil) { btn.disabled = false; $('#track-label').textContent = 'Lacak Status'; }
+}
+form.addEventListener('submit', e => { e.preventDefault(); run(false); });
+[tiket, hp4].forEach(el => el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(el, el === tiket ? 'Format: ADU-2026-000123.' : 'Masukkan 4 digit angka.'); }));
+
+/* Mode demo + prefill dari ?tiket= */
+if (!TRACK_ENDPOINT) {
+  $('#demo').classList.remove('hidden');
+  const lbl = { proses: 'Dalam penanganan', selesai: 'Selesai', diterima: 'Baru diterima', dialihkan: 'Diteruskan' };
+  $('#demo-btns').innerHTML = DEMO.map(d => `<button type="button" data-id="${d.id}" data-hp="${d.hp4}" class="rounded-lg border-2 border-ink bg-white px-3 py-2 text-left text-xs font-semibold transition hover:bg-ink hover:text-white"><span class="block font-mono">${d.id}</span><span class="font-medium opacity-70">${lbl[d.status]} · HP ••••${d.hp4}</span></button>`).join('');
+  $('#demo-btns').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; tiket.value = b.dataset.id; hp4.value = b.dataset.hp; run(false); });
+}
+const q = new URLSearchParams(location.search).get('tiket'); if (q) tiket.value = normId(q.slice(0, 16));
+
+/* ---------- Navbar mobile (slide-in 300ms) ---------- */
+const btn = $('#menu-btn'), panel = $('#mobile-panel'), overlay = $('#overlay'), html = document.documentElement;
+let open = false;
+function setMenu(v) {
+  const was = open; open = v;
+  btn.classList.toggle('is-open', v); btn.setAttribute('aria-expanded', v); btn.setAttribute('aria-label', v ? 'Tutup menu' : 'Buka menu');
+  panel.classList.toggle('translate-x-0', v); panel.classList.toggle('translate-x-full', !v); panel.classList.toggle('invisible', !v);
+  overlay.classList.toggle('opacity-100', v); overlay.classList.toggle('opacity-0', !v); overlay.classList.toggle('invisible', !v);
+  panel.inert = !v; html.classList.toggle('overflow-hidden', v);
+  if (v) setTimeout(() => panel.querySelector('a').focus({ preventScroll: true }), 320); else if (was) btn.focus({ preventScroll: true });
+}
+btn.addEventListener('click', () => setMenu(!open));
+overlay.addEventListener('click', () => setMenu(false));
+$$('.mlink').forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape' && open) setMenu(false); });
+addEventListener('resize', () => { if (innerWidth >= 1024 && open) setMenu(false); });
+const header = $('#header'), onScroll = () => header.classList.toggle('shadow-md', scrollY > 10);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+icons();
+</script>
+</body>
+</html>
